@@ -14,10 +14,8 @@ public class DialogueController : MonoBehaviour
         {
             PlayerUIController playerUIController = other.GetComponent<PlayerUIController>();
             playerUIController.GetTextFromFile(taskText);
+            playerUIController.isDialogue = true;
             fristOnTrigger = false;
-        }else
-        {
-
         }
     }
 }

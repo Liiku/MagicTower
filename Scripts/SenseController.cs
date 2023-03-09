@@ -11,6 +11,11 @@ public class SenseController : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void OnGameExitClick()
+    {
+        SceneManager.LoadScene("Start");
+    }
+
     public void OnExitClick()
     {
         Application.Quit();
@@ -19,6 +24,7 @@ public class SenseController : MonoBehaviour
     public void ContinueClick()
     {
         Time.timeScale = 1;
+
     }
 
     public void RestartClick()

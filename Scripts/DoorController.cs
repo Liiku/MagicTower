@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public bool blueDoor;
+    public bool yellowDoor;
     public bool violetDoor;
-    public bool RedDoor;
+    public bool redDoor;
 
     public AudioClip collectedClip;
 
@@ -32,11 +32,11 @@ public class DoorController : MonoBehaviour
         PlayerController playerController = other.GetComponent<PlayerController>();
         if (playerController != null)//ÅÐ¶ÏÊÇ·ñÎªÍæ¼Ò
         {
-            if (blueDoor)
+            if (yellowDoor)
             {
-                if (playerController.blueKey >= 1)
+                if (playerController.yellowKey >= 1)
                 {
-                    playerController.KeyManage(-1,"BLUE");
+                    playerController.KeyManage(-1,"YELLOW");
                     Animator.SetBool("open",true);
                     playerController.PlaySound(collectedClip);
                 }

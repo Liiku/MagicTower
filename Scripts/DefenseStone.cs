@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyController : MonoBehaviour
+public class DefenseStone : MonoBehaviour
 {
-    public string keyType = "Yellow";
-    //public int keyNumber = 1; ????????为什么不可以????
-
-    //管理钥匙
+    public int increaseDefenseNumber = 15;
     void OnTriggerEnter2D(Collider2D other)
     {
+        //增加防御力
         PlayerController playerController = other.GetComponent<PlayerController>();
         if (playerController != null)//判断是否为玩家
         {
-            playerController.KeyManage(1,keyType);//调用玩家的钥匙管理函数
-            Destroy(gameObject);
+            playerController.DefenseManage(increaseDefenseNumber);//调用玩家的增加防御力函数
+            Destroy(gameObject);//摧毁自己
         }
     }
 }
